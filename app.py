@@ -112,34 +112,30 @@ elif menu == "📺 Skill Courses":
 # ---------- PLACEMENT PREP ----------
 elif menu == "🧠 Placement Prep":
     st.markdown("### 🧠 Placement Preparation Zone")
-    with st.container():
+
+    with st.expander("🎯 Placement Roadmaps"):
         st.markdown("""
-            <div class='link-box'>
-                🎯 <strong>Placement Roadmaps</strong><br>
-                - <a href="https://youtu.be/m7VcIH_N9ZY?si=DO19-0cDFfJMRkUS" target="_blank">Apna College Placement Roadmap</a><br>
-                - <a href="https://youtu.be/VY6003vijLw?si=t8uMFn_KMtHGmYHC" target="_blank">Love Babbar Final Year Roadmap</a>
-            </div>
-        """, unsafe_allow_html=True)
+        - [Apna College Placement Roadmap](https://youtu.be/m7VcIH_N9ZY?si=DO19-0cDFfJMRkUS)
+        - [Love Babbar Final Year Roadmap](https://youtu.be/VY6003vijLw?si=t8uMFn_KMtHGmYHC)
+        """)
+
+    with st.expander("📘 DSA Learning Playlists"):
         st.markdown("""
-            <div class='link-box'>
-                📘 <strong>DSA Learning Playlists</strong><br>
-                - <a href="https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt" target="_blank">Apna College DSA Playlist</a><br>
-                - <a href="https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA" target="_blank">Love Babbar DSA Playlist</a><br>
-                - <a href="https://youtube.com/playlist?list=PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi" target="_blank">CodeWithHarry DSA</a><br>
-                - <a href="https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ" target="_blank">DSA with Java</a><br>
-                - <a href="https://youtube.com/playlist?list=PLhR2IpV1b2FwWwviBHRrR118YAaSlyhTU" target="_blank">DSA with Python</a><br>
-                - <a href="https://youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz" target="_blank">Striver A2Z DSA Practice</a>
-            </div>
-        """, unsafe_allow_html=True)
+        - [Apna College DSA Playlist](https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt)
+        - [Love Babbar DSA Playlist](https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA)
+        - [CodeWithHarry DSA](https://youtube.com/playlist?list=PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi)
+        - [DSA with Java](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ)
+        - [DSA with Python](https://youtube.com/playlist?list=PLhR2IpV1b2FwWwviBHRrR118YAaSlyhTU)
+        - [Striver A2Z DSA Practice](https://youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz)
+        """)
+
+    with st.expander("💻 DSA Practice Platforms"):
         st.markdown("""
-            <div class='link-box'>
-                🧰 <strong>Practice Platforms</strong><br>
-                - <a href="https://www.geeksforgeeks.org/" target="_blank">GeeksForGeeks</a><br>
-                - <a href="https://leetcode.com/" target="_blank">LeetCode</a><br>
-                - <a href="https://www.hackerrank.com/" target="_blank">HackerRank</a><br>
-                - <a href="https://www.codechef.com/" target="_blank">CodeChef</a>
-            </div>
-        """, unsafe_allow_html=True)
+        - [GeeksForGeeks](https://www.geeksforgeeks.org/)
+        - [LeetCode](https://leetcode.com/)
+        - [HackerRank](https://www.hackerrank.com/)
+        - [CodeChef](https://www.codechef.com/)
+        """)
 
 # ---------- PROJECT IDEAS ----------
 elif menu == "🗂️ Project Ideas":
