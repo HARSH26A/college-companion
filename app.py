@@ -1,23 +1,36 @@
 import streamlit as st
+from PIL import Image
 
 st.set_page_config(page_title="College Companion", page_icon="🎓", layout="wide")
 
+# ---------- CUSTOM CSS ----------
 st.markdown("""
     <style>
-        .main {background-color: #f8f9fa;}
-        .title {text-align: center; color: #2c3e50; font-size: 40px;}
-        .section-header {color: #0077b6; margin-top: 20px;}
+        .main {background-color: #f1f3f6;}
+        .title {text-align: center; color: #2c3e50; font-size: 42px; font-weight: bold;}
         .stButton>button {
             color: white;
             background-color: #0077b6;
-            border-radius: 8px;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 16px;
         }
     </style>
 """, unsafe_allow_html=True)
 
+# ---------- HEADER ----------
 st.markdown('<h1 class="title">🎓 College Companion</h1>', unsafe_allow_html=True)
-st.subheader("Your one-stop platform for papers, notes, and placements 📚")
+st.subheader("Your one-stop academic and placement support portal 📚")
 
+# ---------- BRANCH SELECTOR ----------
+st.sidebar.markdown("### 🏫 Select Your Branch")
+branch = st.sidebar.radio("Choose branch:", [
+    "CSE", "AI - ML", "DS", "IoT", "IT", "EC", "MECH", "CIVIL"
+])
+
+st.sidebar.markdown("---")
+
+# ---------- SECTION SELECTOR ----------
 menu = st.sidebar.selectbox("📂 Navigate to Section", [
     "📄 Mid-Term Papers", 
     "📘 Semester Papers", 
@@ -27,46 +40,49 @@ menu = st.sidebar.selectbox("📂 Navigate to Section", [
     "📬 Contact/Feedback"
 ])
 
-# MID TERM PAPERS
+# ---------- BRANCH BANNER ----------
+st.image("https://img.freepik.com/free-vector/university-campus-concept-illustration_114360-12404.jpg", use_column_width=True)
+
+# ---------- MID TERM PAPERS ----------
 if menu == "📄 Mid-Term Papers":
-    st.markdown("### 📄 Mid-Term Papers")
-    st.write("Click to view or download:")
-    st.download_button("Download AI Mid Term 2024", 
-                       data="", 
-                       file_name="ai_midterm_2024.pdf", 
-                       key="ai_midterm")  # Replace `data` with real content or use links below
+    st.markdown(f"### 📄 Mid-Term Papers - {branch}")
+    if branch == "AI - ML":
+        st.markdown("- [📄 Deep Learning Mid-Term (5th Sem)](https://drive.google.com/file/d/16beggVt8XA48fMYrhelBr3pX_ZA_jj09/view?usp=drivesdk)")
 
-    st.markdown("[➡️ View PDF Online (Google Drive)](https://drive.google.com/yourlink)")
-
-# SEMESTER PAPERS
+# ---------- SEMESTER PAPERS ----------
 elif menu == "📘 Semester Papers":
-    st.markdown("### 📘 Previous Year Semester Papers")
-    st.markdown("[Download Sem 3 Paper (AI)](https://drive.google.com/yourlink)")
-    st.markdown("[Download Sem 4 Paper (ML)](https://drive.google.com/yourlink)")
+    st.markdown(f"### 📘 Previous Year Semester Papers - {branch}")
+    st.markdown("[Download Sem 3 Paper](https://drive.google.com/yourlink)")
+    st.markdown("[Download Sem 4 Paper](https://drive.google.com/yourlink)")
 
-# NOTES
+# ---------- NOTES ----------
 elif menu == "📝 Notes":
-    st.markdown("### 📝 Study Notes")
+    st.markdown(f"### 📝 Study Notes - {branch}")
     st.markdown("[Download ML Notes (PDF)](https://drive.google.com/yourlink)")
     st.markdown("[Download DSA Short Notes](https://drive.google.com/yourlink)")
 
-# SKILL COURSES
+# ---------- SKILL COURSES ----------
 elif menu == "📺 Skill Courses":
     st.markdown("### 📺 Skill Development - YouTube Playlists")
-    st.markdown("[Python Programming - CodeWithHarry](https://www.youtube.com/playlist?list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL)")
-    st.markdown("[DSA in C++ - Apna College](https://www.youtube.com/playlist?list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ)")
-    st.markdown("[Aptitude - Talent Battle](https://www.youtube.com/playlist?list=PLfEr2kn3s-br8FJas4U4kNmMxrFto9r-z)")
-    st.markdown("[Resume & Interview - Great Learning](https://www.youtube.com/playlist?list=PL5c5yZtHvqWFeG2fYpMdpFy_d9e6p7lJ4)")
 
-# PLACEMENT PREP
+    st.markdown("#### 🌐 JavaScript Courses")
+    st.markdown("- [Super Simple Dev](https://youtu.be/EerdGm-ehJQ?si=JxHKopXW_gWW3tUs)")
+    st.markdown("- [FreeCodeCamp - JS Full Course](https://youtu.be/PkZNo7MFNFg?si=dKsq-uHE80B1xktn)")
+    st.markdown("- [JavaScript by Apna College (Playlist)](https://youtube.com/playlist?list=PLGjplNEQ1it_oTvuLRNqXfz_v_0pq6unW&si=sSYkZ0NG7x1-XDl2)")
+    st.markdown("- [JavaScript - CodeWithHarry (Playlist)](https://youtube.com/playlist?list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&si=6uy_BsUjusmw4AWe)")
+
+    st.markdown("#### 💻 Coding Practice Platforms")
+    st.markdown("- [GeeksForGeeks](https://www.geeksforgeeks.org/)")
+    st.markdown("- [LeetCode](https://leetcode.com/)")
+    st.markdown("- [HackerRank](https://www.hackerrank.com/)")
+
+# ---------- PLACEMENT PREP ----------
 elif menu == "🧠 Placement Prep":
     st.markdown("### 🧠 Placement Preparation Zone")
-    st.markdown("- Resume tips and templates")
-    st.markdown("- Interview experiences from seniors")
-    st.markdown("- Link to [GeeksForGeeks Interview Series](https://www.geeksforgeeks.org/tag/interview-corner/)")
+    st.markdown("- [Resume templates (Drive)](https://drive.google.com/yourlink)")
+    st.markdown("- [Interview experiences](https://www.geeksforgeeks.org/tag/interview-corner/)")
 
-# FEEDBACK
+# ---------- FEEDBACK ----------
 elif menu == "📬 Contact/Feedback":
     st.markdown("### 📬 Feedback or Suggestions?")
     st.markdown("If you'd like to share anything, send an email to [your-email@example.com](mailto:your-email@example.com) or DM me on Instagram.")
-
